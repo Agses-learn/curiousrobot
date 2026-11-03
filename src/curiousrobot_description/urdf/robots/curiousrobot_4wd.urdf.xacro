@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<robot name="curiousrobot_4wd" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:include filename="$(find curiousrobot_description)/urdf/curiousrobot_properties.urdf.xacro"/>
+  <xacro:include filename="$(find curiousrobot_description)/urdf/mech/base.urdf.xacro"/>
+  <xacro:include filename="$(find curiousrobot_description)/urdf/mech/wheel.urdf.xacro"/>
+
+  <xacro:curiousrobot_base
+    length="${base_length}" width="${base_width}" height="${base_height}"
+    mass="${base_mass}" wheel_radius="${wheel_radius}"
+    wheel_pos_z="${wheel_pos_z}" mesh_file="${base_mesh_file}"/>
+
+  <xacro:curiousrobot_wheel side="front_left" radius="${wheel_radius}" width="${wheel_width}"
+    pos_x="${wheel_pos_x}" pos_y="${wheel_pos_y}" pos_z="${wheel_pos_z}"
+    mass="${wheel_mass}" mesh_file="${wheel_mesh_file}"/>
+  <xacro:curiousrobot_wheel side="front_right" radius="${wheel_radius}" width="${wheel_width}"
+    pos_x="${wheel_pos_x}" pos_y="-${wheel_pos_y}" pos_z="${wheel_pos_z}"
+    mass="${wheel_mass}" mesh_file="${wheel_mesh_file}"/>
+  <xacro:curiousrobot_wheel side="rear_left" radius="${wheel_radius}" width="${wheel_width}"
+    pos_x="-${wheel_pos_x}" pos_y="${wheel_pos_y}" pos_z="${wheel_pos_z}"
+    mass="${wheel_mass}" mesh_file="${wheel_mesh_file}"/>
+  <xacro:curiousrobot_wheel side="rear_right" radius="${wheel_radius}" width="${wheel_width}"
+    pos_x="-${wheel_pos_x}" pos_y="-${wheel_pos_y}" pos_z="${wheel_pos_z}"
+    mass="${wheel_mass}" mesh_file="${wheel_mesh_file}"/>
+
+  <link name="imu_link"/>
+  <joint name="imu_to_base_link" type="fixed">
+    <parent link="base_link"/><child link="imu_link"/>
+    <origin xyz="${imu_pos_x} ${imu_pos_y} ${imu_pos_z}" rpy="${imu_rpy}"/>
+  </joint>
+</robot>

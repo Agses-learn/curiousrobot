@@ -1,0 +1,16 @@
+build/
+install/
+log/
+__pycache__/
+*.pyc
+.vscode/
+.pytest_cache/
+*.egg-info/
+.coverage
+htmlcov/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.bundle

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- Known STM32 chassis values. All dimensions are metres. -->
+  <xacro:property name="wheel_radius" value="0.0325"/>
+  <xacro:property name="wheel_track" value="0.185"/>
+  <xacro:property name="wheel_pos_y" value="${wheel_track / 2.0}"/>
+  <!-- User measured both axle distance and track as 185 mm. -->
+  <xacro:property name="wheelbase" value="0.185"/>
+  <xacro:property name="wheel_pos_x" value="${wheelbase / 2.0}"/>
+  <!-- Body dimensions, masses and wheel width remain provisional. -->
+  <xacro:property name="base_length" value="0.300"/>
+  <xacro:property name="base_width" value="0.140"/>
+  <xacro:property name="base_height" value="0.100"/>
+  <xacro:property name="base_mass" value="5.0"/>
+  <xacro:property name="wheel_width" value="0.030"/>
+  <xacro:property name="wheel_mass" value="0.25"/>
+  <xacro:property name="wheel_pos_z" value="${-wheel_radius}"/>
+  <xacro:property name="base_mesh_file" value=""/>
+  <xacro:property name="wheel_mesh_file" value=""/>
+  <xacro:property name="imu_rpy" value="0 0 0"/>
+  <!-- Provisional IMU pose; measure on the real robot. -->
+  <xacro:property name="imu_pos_x" value="0.0"/>
+  <xacro:property name="imu_pos_y" value="0.0"/>
+  <xacro:property name="imu_pos_z" value="0.050"/>
+</robot>

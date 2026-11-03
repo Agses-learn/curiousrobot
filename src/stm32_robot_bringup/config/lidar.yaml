@@ -1,0 +1,15 @@
+stl06n:
+  ros__parameters:
+    product_name: LDLiDAR_STL06N
+    topic_name: scan
+    frame_id: laser
+    enable_serial_or_network_communication: true
+    port_name: /dev/stl06n
+    port_baudrate: 230400
+    server_ip: 192.168.1.200
+    server_port: "2000"
+    laser_scan_dir: true
+    enable_angle_crop_func: false
+    angle_crop_min: 135.0
+    angle_crop_max: 225.0
+    measure_point_freq: 5000

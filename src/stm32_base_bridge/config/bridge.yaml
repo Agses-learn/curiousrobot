@@ -1,0 +1,22 @@
+stm32_base_bridge:
+  ros__parameters:
+    port: /dev/stm32_motor
+    baudrate: 115200
+    cmd_vel_topic: /cmd_vel
+    odom_topic: /odom/unfiltered
+    imu_topic: /imu/data
+    cmd_timeout: 0.2
+    telemetry_timeout: 0.5
+    reconnect_interval: 1.0
+    command_rate: 20.0
+    max_linear: 0.5
+    max_angular: 3.0
+    odom_frame: odom
+    base_frame: base_footprint
+    imu_frame: imu_link
+    # Initial variances, not calibrated sensor specifications.
+    odom_vx_variance: 0.01
+    odom_vy_variance: 0.05
+    odom_wz_variance: 0.04
+    gyro_variance: 0.0004
+    accel_variance: 0.04

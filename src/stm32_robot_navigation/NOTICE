@@ -1,0 +1,1 @@
+Navigation configuration and RViz setup adapted from Linorobot2 Jazzy, https://github.com/linorobot/linorobot2, Apache-2.0. Upstream launch code copyright (c) 2021 Juan Miguel Jimeno. Changes: CuriousRobot footprint, limits, frame names, timeout and stamped-command settings; mapping-only launch; separate hardware bringup.

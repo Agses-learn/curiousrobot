@@ -1,0 +1,5 @@
+CuriousRobot description derives its four-wheel layout and Xacro macro structure
+from Linorobot2 (https://github.com/linorobot/linorobot2), Apache License 2.0.
+Upstream launch files: Copyright (c) 2021 Juan Miguel Jimeno.
+Changes: CuriousRobot dimensions, standalone launch files, primitive geometry,
+cylinder wheel inertia, configurable IMU pose, and omission of simulation plugins.

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="curiousrobot_base" params="length width height mass wheel_radius wheel_pos_z mesh_file">
+    <link name="base_footprint"/>
+    <link name="base_link">
+      <visual>
+        <geometry>
+          <xacro:if value="${mesh_file == ''}"><box size="${length} ${width} ${height}"/></xacro:if>
+          <xacro:unless value="${mesh_file == ''}"><mesh filename="${mesh_file}"/></xacro:unless>
+        </geometry>
+        <material name="curiousrobot_body"><color rgba="0.18 0.42 0.78 1.0"/></material>
+      </visual>
+      <collision><geometry><box size="${length} ${width} ${height}"/></geometry></collision>
+      <inertial>
+        <mass value="${mass}"/>
+        <inertia
+          ixx="${(1.0 / 12.0) * mass * (width * width + height * height)}"
+          ixy="0" ixz="0"
+          iyy="${(1.0 / 12.0) * mass * (length * length + height * height)}"
+          iyz="0"
+          izz="${(1.0 / 12.0) * mass * (length * length + width * width)}"/>
+      </inertial>
+    </link>
+    <joint name="base_to_footprint" type="fixed">
+      <parent link="base_footprint"/><child link="base_link"/>
+      <origin xyz="0 0 ${wheel_radius - wheel_pos_z}" rpy="0 0 0"/>
+    </joint>
+  </xacro:macro>
+</robot>

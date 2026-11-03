@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.8)
+project(stm32_robot_navigation)
+find_package(ament_cmake REQUIRED)
+install(DIRECTORY launch config rviz maps DESTINATION share/${PROJECT_NAME})
+install(FILES README.md LICENSE NOTICE DESTINATION share/${PROJECT_NAME})
+ament_package()
